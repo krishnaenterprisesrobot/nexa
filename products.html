@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KRISHNA ENTERPRISES — Products</title>
+  <link rel="icon" href="./logo.png" type="image/png" />
+  <link rel="stylesheet" href="./css/pdf.css" />
+  <!-- PDF.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+<body class="no-scroll">
+  <header class="pdf-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="./logo.png" alt="logo" class="logo" />
+        <div class="brand-text">
+          <h1>KRISHNA ENTERPRISES</h1>
+          <p>Products</p>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
+    <img src="./loading.gif" id="loading-gif" alt="loading" />
+    <div id="loading-text">Loading…</div>
+    <div id="loading-percent">0%</div>
+  </div>
+
+  <div id="pdf-container" class="container"></div>
+
+  <script src="./js/pdf-script.js"></script>
+</body>
+</html>
