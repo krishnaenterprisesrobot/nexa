@@ -7,14 +7,22 @@
 
 *{box-sizing:border-box}
 
+/* SMOOTH SCROLLING ENABLED */
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color:var(--black);
   min-height:100vh;
+  /* Font smoothing for crisp text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- PRELOADER STYLES (UPDATED) --- */
+/* --- PRELOADER STYLES --- */
 body.loading {
   overflow: hidden;
 }
@@ -25,7 +33,7 @@ body.loading {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #ffffff; /* WHITE BACKGROUND */
+  background: #ffffff;
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -37,10 +45,8 @@ body.loading {
   width: 250px; 
   height: 250px; 
   object-fit: contain;
-  /* CHANGED: From 50% circle to 20px rounded corners */
   border-radius: 20px; 
 }
-/* ---------------------------------- */
 
 /* BACKGROUND SLIDESHOW */
 .bg-container {
@@ -62,6 +68,8 @@ body.loading {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  /* PERFORMANCE: Hints browser to use GPU for smoothness */
+  will-change: opacity; 
 }
 
 .img-1 {
@@ -205,23 +213,40 @@ body.loading {
   text-decoration: none;
 }
 
+/* --- UPDATED PHONE GRID --- */
 .phone-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 
-.phone-grid span {
+/* CHANGED 'span' TO 'a' */
+.phone-grid a {
   display: block;
   font-size: 1.25rem;
   font-weight: 800;
-  color: #fff;
+  
+  /* FORCE WHITE COLOR ON ALL PHONES INCLUDING IPHONE */
+  color: #fff !important; 
+  text-decoration: none;
+  
   background: rgba(255,179,71, 0.1);
   padding: 8px;
   text-align: center;
   border-radius: 6px;
   border: 1px solid rgba(255,179,71, 0.3);
+  transition: transform 0.2s ease, background 0.2s ease;
+  
+  /* PREVENT BLUE LINK ON iOS */
+  -webkit-text-decoration-color: rgba(0,0,0,0);
 }
+
+.phone-grid a:hover {
+  background: rgba(255,179,71, 0.3);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+/* -------------------------- */
 
 .features{
   margin-top:32px;
