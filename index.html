@@ -60,12 +60,14 @@
           <h3>📞 Call Us</h3>
           <div class="contact-block phone-block">
             <p><a href="mailto:krishna.enterprises1459a@gmail.com">krishna.enterprises1459a@gmail.com</a></p>
+            
             <div class="phone-grid">
-              <span>07676874498</span>
-              <span>08951533446</span>
-              <span>09448354944</span>
-              <span>08066045354</span>
+              <a href="tel:07676874498">07676874498</a>
+              <a href="tel:08951533446">08951533446</a>
+              <a href="tel:09448354944">09448354944</a>
+              <a href="tel:08066045354">08066045354</a>
             </div>
+
           </div>
         </div>
       </div>
@@ -114,18 +116,14 @@
 
   <script>
     window.addEventListener('load', function() {
-      // 5 Seconds Timer
       setTimeout(function() {
         var preloader = document.getElementById('preloader');
-        preloader.style.opacity = '0'; // Start fade out
-        
-        // Remove from layout after fade is done
+        preloader.style.opacity = '0';
         setTimeout(function() {
           preloader.style.display = 'none';
           document.body.classList.remove('loading');
         }, 500);
-        
-      }, 5000); // 5000ms = 5 seconds
+      }, 5000);
     });
   </script>
 
